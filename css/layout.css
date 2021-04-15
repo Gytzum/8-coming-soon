@@ -18,6 +18,7 @@ body {
     gap: 30px;
     grid-area: hero;
     text-align: center;
+    align-items: center;
   }
   .hero .logo {
     height: 50px;
