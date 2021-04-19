@@ -1,3 +1,15 @@
+/*
+1. sugeneruoti HTML
+2. stebeti kada ivyksta scrollas
+    -gal jau pamatomas kazkuris is progress-bar
+         -jei taip animuojam jo loading.
+            -bet jei jau buvo suanimuotas tai daugiau to paties 
+        nebekartojame.
+         -jei ne tai nieko.. laukiam.
+*/
+
+
+//1. generuojamas HTML
 function progressBar(selector,data) {
     const DOM = document.querySelector(selector)
 
@@ -11,11 +23,19 @@ function progressBar(selector,data) {
                     <div class= " label " > ${bar.value}%</div>
                  </div>
                  <div class="bottom">  
-                 <div class= "progress" style="width:${bar.value}%;"></div>
+                 <div class= "progress" style="width:${bar.value}%;">
+                 <div class="bar"></div>
+                 </div>
             </div>
         </div>`
     }       
-    return DOM.innerHTML += HTML
+    DOM.innerHTML += HTML
+
+    //2. stebime scrolla.
+    addEventListener ('scroll', ()=> {
+        console.log(scrollY);
+
+    })
 }
 
 export { progressBar}
