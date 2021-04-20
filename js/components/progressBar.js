@@ -32,10 +32,20 @@ function progressBar(selector,data) {
     DOM.innerHTML += HTML
 
     //2. stebime scrolla.
-    addEventListener ('scroll', ()=> {
-        console.log(scrollY);
+    const progressBarsDOM = DOM.querySelectorAll('.progress-bar');
 
-    })
+    for (const progressBarDOM of progressBarsDOM) {
+
+        addEventListener ('scroll', ()=> {
+            const elementTop = progressBarDOM.offsetTop;
+            const elementHeight = progressBarDOM.clientHeight;
+            const isVisible = scrollY + innerHeight >= elementTop + elementHeight;
+    
+            if(isVisible){progressBarDOM.classList.add('animate');}
+            
+        })
+    }
+
 }
 
-export { progressBar}
+export { progressBar }
