@@ -101,10 +101,13 @@ body {
     font-size: 20px;
     border-radius: 50%;
     color: #fff;
+    cursor: pointer;
+    text-decoration: none;
   }
   footer > .socials-content > .icon:hover {
     background-color: #fff;
     color: var(--color-main);
+    
   }
   footer > .bottom-texts {
     grid-area: texts;
